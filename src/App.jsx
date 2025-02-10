@@ -114,8 +114,10 @@ const App = () => {
         </Stack>
       ) : (
         winner && (
-          <Stack>
-            <img src="./prizePng.gif" alt="" />
+          <Stack >
+            <Stack direction={'row'} justifyContent={'center'}>
+            <img src="./prizePng.gif" width={450} alt="" />
+            </Stack>
             <Typography sx={{ fontSize: 24 }}>
               {winner.name} ({winner._id})
             </Typography>
@@ -133,10 +135,12 @@ const App = () => {
       </Button>
 
       <Stack mt={5}>
-        <Typography sx={{ textAlign: "left", fontSize: 22, mb: 1 }}>
+        <Typography sx={{ textAlign: "center", fontSize: 22, mb: 1 }}>
           Top 10 Winner List
         </Typography>
-        {winnersList.map((winner, index) => (
+       <Stack direction={'row'} justifyContent={'center'}>
+       <Stack width={600}>
+       {winnersList.map((winner, index) => (
           <Box
             key={winner._id}
             sx={{
@@ -163,6 +167,8 @@ const App = () => {
             </Stack>
           </Box>
         ))}
+       </Stack>
+       </Stack>
       </Stack>
     </div>
   );
